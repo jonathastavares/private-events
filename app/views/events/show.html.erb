@@ -5,5 +5,23 @@
   <%= @event.event_date %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<h2> Attendees </h2>
+<table>
+  <tbody>
+    <% @event.attendees.each do |attendee| %>
+      <tr>
+        <td><%= link_to attendee.email, profile_path(attendee.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_for(event, as: resource_name, url: session_path(@event)) do |f| %>
+
+  <div class="actions">
+      <%= f.submit "Attend this event" %>
+  </div>
+
+<% end %>
+
 <%= link_to 'Back', events_path %>
