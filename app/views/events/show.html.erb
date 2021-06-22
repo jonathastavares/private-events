@@ -16,12 +16,6 @@
   </tbody>
 </table>
 
-<%= form_for(event, as: resource_name, url: session_path(@event)) do |f| %>
-
-  <div class="actions">
-      <%= f.submit "Attend this event" %>
-  </div>
-
-<% end %>
+<%= show_registration_button(@event) %>
 
 <%= link_to 'Back', events_path %>
