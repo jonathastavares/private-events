@@ -62,7 +62,9 @@ class EventsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      format.html { redirect_to events_path, alert: "You have no permissions to delete this event." }
+      respond_to do |format|
+        format.html { redirect_to events_path, alert: "You have no permissions to delete this event." }
+      end
     end
   end
 
