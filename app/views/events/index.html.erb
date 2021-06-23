@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Last events</h1>
-
-<table>
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.event_date %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><p>Created by:<%= link_to event.creator.username, profile_path(event.user_id) %></p></td>
-      </tr>
-    <% end %>
-  </tbody>
-  <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to Log Out?" } %>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<div class="text-center">
+  <h1 class="form-title m-4">Last events</h1>
+  <div class="text-center d-flex justify-content-center flex-wrap">
+    <table>
+      <tbody>
+        <% @events.each do |event| %>
+            <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+              <div class="card-body bg-other">
+                <p class="card-text"><%= event.description %></p>
+              </div>
+              <div class="card-header bg-white p-1 d-block">
+                  <p><%= event.title %></p>
+                  <p><%= event.event_date %></p>
+              </div>
+              <div class="d-flex">
+                <%= link_to 'Check Event', event, class:'btn btn-warning m-1' %>
+                <%= show_attendance(event) %>
+              </div>
+            </div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

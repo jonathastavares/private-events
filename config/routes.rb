@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :attendance
   resources :attendances do
     match '/join', to: 'attendances#join', via: :post, on: :collection
+    match '/remove', to: 'attendances#destroy', via: :delete, on: :collection
   end
   root 'events#index'
   get 'users/:id', :to => 'users#show', :as => :profile

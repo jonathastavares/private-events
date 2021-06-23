@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* NAVBAR STYLESHEET */
+
+body {
+    background-color: rgb(149, 150, 154) !important;
+}
+
+.navbar {
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100% !important;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.btn-warning {
+    background-color: rgb(253, 224, 58) !important;
+}
+
+.navbar-nav {
+    color: black;
+}
+
+.username a {
+    color:rgb(149, 150, 154) !important;
+}
+
+.title {
+    color:rgb(88, 90, 92);
+    margin-left: 40px;
+}
+
+.title:hover {
+    color: rgb(149, 150, 154);
+}
+
+.navbar-toggler {
+    color:rgb(149, 150, 154);
+}
+
+/* LOGIN STYLESHEET */
+
+.links {
+    color: rgb(51, 51, 51);
+}
+
+.links:hover {
+    color: black;
+}
+
+.form-box {
+    width: 400px;
+}
+
+.form-btn {
+    padding: 10px 20px;
+}
+
+.form-label {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(51, 51, 51);
+}
+
+.form-title {
+    font-weight: 400;
+    font-size: 50px;
+}
+
+/* EVENTS STYLESHEET */
+
+.card {
+    height: 300px;
+    max-height: 300px;
+    width: 300px;
+    max-width: 300px;
+}
+
+.bg-white {
+    margin: .5rem .5rem 0 .5rem;
+}
+
+.bg-other {
+    background-color: rgb(253, 224, 58);
+    margin: .2rem .2rem .2rem .2rem;
+}
