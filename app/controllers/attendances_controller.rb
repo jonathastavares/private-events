@@ -9,7 +9,7 @@ class AttendancesController < ApplicationController
     end
 
     def destroy
-      @attendance = Attendance.find_by(user_id: current_user.id)
+      @attendance = Attendance.find_by(user_id: current_user.id, event_id: params[:id])
       @attendance.destroy
       respond_to do |format|
         format.html { redirect_to events_url, notice: "You were removed from this event." }
