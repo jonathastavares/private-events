@@ -1,9 +1,9 @@
-<%= @user.email %>
+<%= @user.username %>
 
 <table>
   <thead>
     <tr>
-      <th>Events created by <%= @user.email %></th>
+      <th>Events created by <%= @user.username %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +12,7 @@
     <% @user.events.each do |event| %>
       <tr>
         <td><%= event.event_date %></td>
+        <td><p>Created by:<%= link_to event.creator.username, profile_path(event.user_id) %></p></td>
         <td><%= link_to 'Show', event %></td>
       </tr>
     <% end %>
@@ -21,7 +22,7 @@
 <table>
   <thead>
     <tr>
-      <th>Events attended by <%= @user.email %></th>
+      <th>Events attended by <%= @user.username %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,7 +31,7 @@
     <% @user.attended_events.each do |event| %>
       <tr>
         <td><%= event.event_date %></td>
-        <td><p>Created by:<%= link_to event.creator.email, profile_path(event.user_id) %></p></td>
+        <td><p>Created by:<%= link_to event.creator.username, profile_path(event.user_id) %></p></td>
         <td><%= link_to 'Show', event %></td>
       </tr>
     <% end %>
