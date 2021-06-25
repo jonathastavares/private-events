@@ -1,22 +1,12 @@
 module ApplicationHelper
     def show_registration_button(event)
-        if event.attendances.exists?(user_id: current_user.id)
-          # rubocop:disable Metrics/LineLength
-          (link_to 'I will not attend this event', remove_attendances_path(id: event.id), class: 'btn btn-warning', method: :delete).to_s.html_safe
-        else
-          (link_to 'Attend this event', join_attendances_path(id: event.id), class: 'btn btn-warning', method: :post).to_s.html_safe
-          # rubocop:enable Metrics/LineLength
-        end
-    end
-
-    def show_attendance(event)
       if signed_in?
         if event.attendances.exists?(user_id: current_user.id)
-          '<span class="btn-magenta m-1 text-white">Attending!
-          </span>'.html_safe
+          # rubocop:disable Metrics/LineLength
+          (link_to 'Attending!', remove_attendances_path(id: event.id), class: 'btn-warning m-1 btn-padding', method: :delete).to_s.html_safe
         else
-          '<span class="btn-warning m-1 btn-padding">Attend!
-          </span>'.html_safe
+          (link_to 'Attend!', join_attendances_path(id: event.id), class: 'btn-magenta m-1 btn-padding text-white', method: :post).to_s.html_safe
+          # rubocop:enable Metrics/LineLength
         end
       end
     end
