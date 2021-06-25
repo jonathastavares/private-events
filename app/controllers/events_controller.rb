@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    @upcoming_events = Event.upcoming_events
+    @past_events = Event.past_events
   end
 
   # GET /events/1 or /events/1.json
@@ -66,6 +68,14 @@ class EventsController < ApplicationController
         format.html { redirect_to events_path, alert: "You have no permissions to delete this event." }
       end
     end
+  end
+
+  def show_upcoming
+    @upcoming_events = Event.upcoming_events
+  end
+
+  def show_past
+    @past_events = Event.past_events
   end
 
   private
