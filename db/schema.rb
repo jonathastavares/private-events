@@ -9,6 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
+# rubocop:disable Metrics/BlockLength
 
 ActiveRecord::Schema.define(version: 20_210_622_202_648) do
   # These are extensions that must be enabled in order to support this database
@@ -50,3 +51,4 @@ ActiveRecord::Schema.define(version: 20_210_622_202_648) do
   add_foreign_key 'attendances', 'events'
   add_foreign_key 'attendances', 'users'
 end
+# rubocop:enable Metrics/BlockLength
