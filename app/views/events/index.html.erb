@@ -1,11 +1,10 @@
-<p id="notice"><%= notice %></p>
 <div class="text-center">
   <h1 class="form-title m-4 text-white">Last events</h1>
   <div class="text-center d-flex justify-content-center flex-wrap">
     <table>
       <tbody>
         <% @events.each do |event| %>
-            <div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+            <div class="card text-dark bg-white mb-3">
               <div class="card-body bg-other">
                 <p class="card-text text-white pb-5"><%= event.description %></p>
               </div>

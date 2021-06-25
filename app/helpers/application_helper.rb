@@ -3,9 +3,9 @@ module ApplicationHelper
       if signed_in?
         if event.attendances.exists?(user_id: current_user.id)
           # rubocop:disable Metrics/LineLength
-          (link_to 'Attending!', remove_attendances_path(id: event.id), class: 'btn-warning m-1 btn-padding', method: :delete).to_s.html_safe
+          (link_to 'Attending!', remove_attendances_path(id: event.id), class: 'btn-warning m-1 btn-padding text-decoration-none', method: :delete).to_s.html_safe
         else
-          (link_to 'Attend!', join_attendances_path(id: event.id), class: 'btn-magenta m-1 btn-padding text-white', method: :post).to_s.html_safe
+          (link_to 'Attend!', join_attendances_path(id: event.id), class: 'btn-magenta m-1 btn-padding text-white text-decoration-none', method: :post).to_s.html_safe
           # rubocop:enable Metrics/LineLength
         end
       end
@@ -38,11 +38,11 @@ module ApplicationHelper
 
     def show_events_attended_button
       return unless current_user
-      (link_to 'Events attended', profile_path(current_user), class: 'nav-link').to_s.html_safe
+      (link_to 'Events attended', attended_events_path, method: :post, action: :attended, class: 'nav-link').to_s.html_safe
     end
 
     def show_events_created_button
       return unless current_user
-      (link_to 'Events created', profile_path(current_user), class: 'nav-link').to_s.html_safe
+      (link_to 'Events created', created_events_path, method: :post, action: :created, class: 'nav-link').to_s.html_safe
     end
 end

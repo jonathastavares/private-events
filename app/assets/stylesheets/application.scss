@@ -94,8 +94,8 @@ body {
 .card {
     height: 330px;
     max-height: 330px;
-    width: 300px;
-    max-width: 300px;
+    width: 450px;
+    max-width: 450px;
 }
 
 .bg-white {
@@ -118,4 +118,21 @@ body {
     padding: 5px 30px 5px 30px;
     border-radius: 5px;
     border: 1px solid rgb(1, 0, 2);
+}
+
+.event-card {
+    height: 100% !important;
+    max-height: 100% !important;
+    width: 1000px !important;
+    max-width: 1000px !important;
+}
+
+.profile-container {
+    height: 100%;
+}
+
+/* USER PROFILE STYLESHEET */
+
+.created-events {
+    color: black;
 }
