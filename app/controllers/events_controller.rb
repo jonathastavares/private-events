@@ -22,12 +22,11 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = Event.new(event_params)
-    @event.build_creator(id: current_user.id)
+    @event = current_user.events.build(event_params)
     respond_to do |format|
       if @event.save
         current_user.attended_events.push @event
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new, status: :unprocessable_entity }

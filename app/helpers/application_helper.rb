@@ -17,6 +17,11 @@ module ApplicationHelper
     (link_to 'Create new event', new_event_path, class: 'nav-link btn-warning').to_s.html_safe
   end
 
+  def event_creator(event)
+    creator = User.find_by(id: event.user_id)
+    return creator
+  end
+
   def show_user_name(current_user)
     if signed_in?
       "<li class='nav-item'>
