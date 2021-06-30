@@ -18,8 +18,7 @@ module ApplicationHelper
   end
 
   def event_creator(event)
-    creator = User.find_by(id: event.user_id)
-    return creator
+    User.find_by(id: event.user_id)
   end
 
   def show_user_name(current_user)
