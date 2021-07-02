@@ -1,0 +1,138 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* NAVBAR STYLESHEET */
+
+body {
+  background-color: rgb(149, 150, 154) !important;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100% !important;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+.btn-warning {
+  background-color: rgb(253, 224, 58) !important;
+}
+
+.navbar-nav {
+  color: black;
+}
+
+.username a {
+  color: rgb(149, 150, 154) !important;
+}
+
+.title {
+  color: rgb(88, 90, 92);
+  margin-left: 40px;
+}
+
+.title:hover {
+  color: rgb(149, 150, 154);
+}
+
+.navbar-toggler {
+  color: rgb(149, 150, 154);
+}
+
+/* LOGIN STYLESHEET */
+
+.links {
+  color: white;
+}
+
+.links:hover {
+  color: black;
+}
+
+.form-box {
+  width: 400px;
+}
+
+.form-btn {
+  padding: 10px 20px;
+  color: rgb(51, 51, 51) !important;
+}
+
+.form-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(51, 51, 51);
+}
+
+.form-title {
+  font-weight: 400;
+  font-size: 50px;
+}
+
+/* EVENTS STYLESHEET */
+
+.card {
+  height: 330px;
+  max-height: 330px;
+  width: 450px;
+  max-width: 450px;
+}
+
+.bg-white {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.bg-other {
+  background-color: rgb(149, 150, 154);
+  margin: 0.2rem;
+}
+
+.btn-padding {
+  padding: 5px 20px 5px 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(228, 201, 49);
+}
+
+.btn-magenta {
+  background-color: rgb(54, 14, 66);
+  padding: 5px 30px 5px 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(1, 0, 2);
+}
+
+.event-card {
+  height: 100% !important;
+  max-height: 100% !important;
+  width: 1000px !important;
+  max-width: 1000px !important;
+}
+
+.profile-container {
+  height: 100%;
+}
+
+/* USER PROFILE STYLESHEET */
+
+.created-events {
+  color: black;
+}

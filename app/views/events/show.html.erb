@@ -1,0 +1,28 @@
+<h1 class="text-white text-center m-5"> EVENT </h1>
+<h5 class="text-white text-center m-2"> CREATED BY: <%= link_to event_creator(@event).username, profile_path(@event.user_id), class:'text-white text-decoration-none' %> </h5>
+<div class="container justify-content-center">
+  <div class="card border-warning mb-3 text-center event-card">
+    <div class="card-header bg-warning">
+      <h4><%= @event.title %></h4>
+      <p><%= @event.event_date %></p>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= @event.description %></p>
+    </div>
+    <div class="card-body bg-secondary">
+      <h5>Attendees</h5>
+      <table class="text-center w-100">
+        <tbody>
+          <% @event.attendees.each do |attendee| %>
+            <tr>
+              <td><%= link_to attendee.username, profile_path(attendee.id), class:'text-white text-decoration-none' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="container justify-content-center">
+  <%= link_to 'Back', events_path, class:'btn btn-warning' %>
+</div>

@@ -1,0 +1,22 @@
+<h1 class="text-white text-center m-5">Events created by you!</h1>
+<div class="container justify-content-center profile-container">
+  <div class="card border-warning mb-3 text-center event-card">
+    <div class="card-header bg-warning">
+      <h4><%= current_user.username %></h4>
+    </div>
+    <div class="card-body">
+      <table class="text-center w-100">
+        <tbody>
+          <% current_user.events.each do |event| %>
+            <tr>
+              <td><%= link_to event.title, event_path(event.id), class:'text-decoration-none created-events' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="container justify-content-center">
+  <%= link_to 'Back', events_path, class:'btn btn-warning' %>
+</div>

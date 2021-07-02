@@ -1,0 +1,35 @@
+<div class="container text-center justify-content-center">
+  <div class="event-card text-dark bg-white mb-3">
+    <%= form_with(model: event) do |form| %>
+      <% if event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+          <ul>
+            <% event.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="card-body bg-warning">
+        <%= form.label :title, 'Event Title' %>
+        <%= form.text_field :title %>
+      </div>
+      
+      <div class="card-body bg-secondary d-flex justify-content-center">
+        <%= form.label :description,'Event Description', class:'text-white m-2', style:'align-self: center;' %>
+        <%= form.text_area :description, style:'width: 500px; height: 150px;' %>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <%= form.label :event_date, 'Event Date and Time', class:'m-2' %>
+        <%= form.datetime_select :event_date %>
+      </div>
+
+      <div class="card-footer text-white bg-dark">
+        <button type="submit" class="btn btn-warning">Create Event</button>
+      </div>
+    <% end %>
+  </div>
+</div>

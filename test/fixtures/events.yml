@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event-date: 2021-06-09 12:00:49
+
+two:
+  event-date: 2021-06-09 12:00:49
